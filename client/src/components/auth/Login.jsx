@@ -14,7 +14,7 @@ function Login() {
     try {
       
       e.preventDefault();
-      const login = await axios.post("http://localhost:8080/auth/login", {
+      const login = await axios.post("https://super-cyan-culottes.cyclic.app/auth/login", {
         email,
         password,
       });
