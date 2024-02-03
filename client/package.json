@@ -22,7 +22,7 @@
     "react-toastify": "^10.0.4",
     "redux": "^4.2.1",
     "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.3.0",
+    "redux-thunk": "^2.4.2",
     "table": "^6.8.1"
   },
   "devDependencies": {
