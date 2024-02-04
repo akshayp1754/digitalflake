@@ -33,7 +33,7 @@ function SidebarComponent() {
       <Sidebar aria-label="Default sidebar example w-16">
         <Sidebar.Items>
           <Sidebar.ItemGroup>
-            <Sidebar.Item href="#" icon={HiChartPie} onClick={() => handleItemClick("Home")}>
+            <Sidebar.Item className="cursor-pointer" icon={HiChartPie} onClick={() => handleItemClick("Home")}>
               Home
             </Sidebar.Item>
 
@@ -42,11 +42,13 @@ function SidebarComponent() {
               isactive={activeComponent === "Category" ? "true" : "false"}
               icon={HiViewBoards}
               labelColor="dark"
+              className="cursor-pointer"
             >
               Category
             </Sidebar.Item>
 
             <Sidebar.Item
+            className="cursor-pointer"
               onClick={() => handleItemClick("Products")}
               isactive={activeComponent === "Products" ? "true" : "false"}
               icon={HiInbox}

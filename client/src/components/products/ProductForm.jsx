@@ -9,7 +9,7 @@ function ProductForm() {
   const categoryData = useSelector((state) => state.category);
 console.log("category data: ",categoryData);
   const [category, setCategory] = useState("");
-  const [selectedCategory, setselectedCategory] = useState('');
+  const [selectedCategory, setselectedCategory] = useState("");
   const [productname, setProductname] = useState("");
   const [packsize, setPacksize] = useState("");
   const [MRP, setMRP] = useState("");
@@ -60,7 +60,7 @@ console.log("category data: ",categoryData);
       formData.append("productimage", productimage);
       formData.append("productname", productname);
       formData.append("packsize", packsize);
-      formData.append("MRP", MRP);
+      formData.append("MRP", parseInt(MRP, 10));
       formData.append("status", status);
       formData.append("selectedCategory", selectedCategory)
 
@@ -70,7 +70,8 @@ console.log("category data: ",categoryData);
         navigate("/home")
         
       } else if (mode === "edit"){
-        dispatch(updateProduct(id ,{ productname, packsize, MRP, status, category}))
+        const numericMRP = parseInt(MRP, 10);
+        dispatch(updateProduct(id ,{ productname, packsize, MRP:numericMRP, status, category}))
         navigate("/home")
       }
     } catch (error) {

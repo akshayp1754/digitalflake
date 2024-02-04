@@ -50,7 +50,7 @@ function CategoryForm() {
         }
 
         clearFields();
-        navigate("/category");
+        navigate("/home");
       }
     } catch (error) {
       console.log(error.message);
