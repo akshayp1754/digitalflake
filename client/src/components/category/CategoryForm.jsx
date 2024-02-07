@@ -19,7 +19,6 @@ function CategoryForm() {
 
   useEffect(() => {
     const category = categorys.find((category) => category._id === id);
-    console.log(category);
 
     if (category) {
       setCategoryName(category.categoryName);

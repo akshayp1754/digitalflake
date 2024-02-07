@@ -9,10 +9,9 @@ import {
   HiUser,
   HiViewBoards,
 } from "react-icons/hi";
-import { Link } from "react-router-dom";
 import Category from "./category/Category";
 import ProductTable from "./products/ProductTable";
-import Welcome from "./Welcome"; // Import your Welcome component
+import Welcome from "./Welcome"; 
 
 function SidebarComponent() {
   const [activeComponent, setActiveComponent] = useState("Home"); // Set default active component to "Home"
@@ -21,7 +20,6 @@ function SidebarComponent() {
     setActiveComponent(componentName);
   };
 
-  // Define the components corresponding to each sidebar item
   const componentMap = {
     Home: <Welcome />,
     Category: <Category />,
@@ -59,7 +57,6 @@ function SidebarComponent() {
         </Sidebar.Items>
       </Sidebar>
 
-      {/* Render the active component */}
       {componentMap[activeComponent]}
     </>
   );

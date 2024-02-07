@@ -7,7 +7,6 @@ import { getCategory, updateCategory } from "../../redux/action/category";
 function ProductForm() {
   const productss = useSelector((state) => state.product)
   const categoryData = useSelector((state) => state.category);
-console.log("category data: ",categoryData);
   const [category, setCategory] = useState("");
   const [selectedCategory, setselectedCategory] = useState("");
   const [productname, setProductname] = useState("");

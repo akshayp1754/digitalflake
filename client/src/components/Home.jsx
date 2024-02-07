@@ -9,7 +9,6 @@ function Home() {
   const navigate = useNavigate()
 
   const key = localStorage.getItem("token")
-console.log(key);
   useEffect(() => {
     if (key === null) {
       navigate("/");

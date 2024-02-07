@@ -3,7 +3,8 @@ const { comparePassword, hashPassword } = require("../utils/auth");
 const { verifyAuthToken } = require("../utils/token");
 const jwt = require("jsonwebtoken");
 
-const SECRET_KEY = "HARE_KRISHNA"
+// const SECRET_KEY = "HARE_KRISHNA"
+// console.log(process.env.JWT_SECRET);
 
 module.exports.signup = async (req, res) => {
   try {
@@ -69,7 +70,7 @@ module.exports.login = async (req, res) => {
         email: user.email,
         name: user.firstName,
       },
-      SECRET_KEY,
+      process.env.JWT_SECRET,
       {
         expiresIn: "1d",
       }
