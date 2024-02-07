@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signupUser } from "../../redux/action/auth";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 function Signup() {
   const [firstName, setFirstName] = useState("");
@@ -10,19 +10,26 @@ function Signup() {
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
-  // const navigate = navigate()
+  const navigate = useNavigate();
+
+  const clearInput = () => {
+    setEmail("");
+    setPassword("");
+    setLastName("");
+    setFirstName("");
+  };
 
   const handleSubmit = (e) => {
     try {
       e.preventDefault();
       dispatch(signupUser({ firstName, lastName, email, password }));
-      navigate('/login')
+      clearInput();
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
   };
   return (
-    
     <section className="bg-gray-50 dark:bg-gray-900">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <a

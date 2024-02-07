@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteProduct, getProduct } from "../../redux/action/products";
 import Products from "./Products";
 import { useNavigate } from "react-router-dom";
+import privateRoute from "../hoc/privateRoute";
 
-export default function ProductTable() {
+ function ProductTable() {
   const productss = useSelector((state) => state.product);
   const navigate = useNavigate();
 
@@ -156,3 +157,5 @@ export default function ProductTable() {
     </>
   );
 }
+
+export default privateRoute(ProductTable)

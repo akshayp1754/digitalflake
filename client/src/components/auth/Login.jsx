@@ -8,16 +8,20 @@ import toast from "react-hot-toast";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     try {
-      
       e.preventDefault();
-      const login = await axios.post("https://super-cyan-culottes.cyclic.app/auth/login", {
-        email,
-        password,
-      });
+      setLoading(true);
+      const login = await axios.post(
+        "https://super-cyan-culottes.cyclic.app/auth/login",
+        {
+          email,
+          password,
+        }
+      );
 
       if (login.status === 200) {
         localStorage.setItem("token", login.data.data.token);
@@ -28,6 +32,8 @@ function Login() {
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -43,7 +49,7 @@ function Login() {
             src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
             alt="logo"
           />
-          Digiflake
+          Digitalflake
         </a>
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -55,7 +61,6 @@ function Login() {
               className="space-y-4 md:space-y-6"
               action="#"
             >
-              {/* {loginError && <p className="text-red-500">{loginError}</p>} */}
               <div>
                 <label
                   htmlFor="email"
@@ -92,13 +97,12 @@ function Login() {
               </div>
 
               <button
-                style={{
-                  background: "#ffbf00",
-                }}
+                style={{ background: "#ffbf00" }}
                 type="submit"
                 className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                disabled={loading} 
               >
-                Login
+                {loading ? "Logging in..." : "Login"}
               </button>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                 Don’t have an account yet?{" "}
