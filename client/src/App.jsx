@@ -19,7 +19,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" index element={<Layout/>}/>
-        <Route path="/category" element={<Category />} />
+        <Route path="/categorytable" element={<Category />} />
         <Route path="/categoryform" element={<CategoryForm />} />
         <Route path="/categoryform/:id" element={<CategoryForm />} />
         <Route path="/table" element={<CategoryTable />} />

@@ -7,6 +7,7 @@ import { getCategory, updateCategory } from "../../redux/action/category";
 function ProductForm() {
   const productss = useSelector((state) => state.product)
   const categoryData = useSelector((state) => state.category);
+  console.log(categoryData);
   const [category, setCategory] = useState("");
   const [selectedCategory, setselectedCategory] = useState("");
   const [productname, setProductname] = useState("");
@@ -24,7 +25,6 @@ function ProductForm() {
     dispatch(getCategory())
     dispatch(getProduct())
 
-    setselectedCategory(categoryData)
 
     const product = productss.find((product) => product._id === id);
     if (product) {
@@ -77,6 +77,7 @@ function ProductForm() {
       console.log(error.message);
     }
   };
+  console.log(selectedCategory);
   return (
     <div>
       <form onSubmit={handleAddOrUpdate}>

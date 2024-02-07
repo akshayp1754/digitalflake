@@ -1,9 +1,8 @@
 import { Navbar } from 'flowbite-react'
 import React from 'react'
 import SidebarComponent from './SidebarComponent'
-import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import withAuth from './hoc/withAuth';
+import privateRoute from './hoc/privateRoute';
 
 function Home() {
   const navigate = useNavigate()
@@ -24,4 +23,4 @@ function Home() {
   )
 }
 
-export default Home
+export default privateRoute(Home)

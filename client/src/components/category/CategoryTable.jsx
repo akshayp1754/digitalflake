@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteCategory, getCategory } from "../../redux/action/category";
 import { useNavigate } from "react-router-dom";
+import privateRoute from "../hoc/privateRoute";
 
 function CategoryTable() {
   const category = useSelector((state) => state.category);
@@ -138,4 +139,4 @@ function CategoryTable() {
   );
 }
 
-export default CategoryTable;
+export default privateRoute(CategoryTable);

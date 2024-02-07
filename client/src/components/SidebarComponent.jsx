@@ -14,7 +14,7 @@ import ProductTable from "./products/ProductTable";
 import Welcome from "./Welcome"; 
 
 function SidebarComponent() {
-  const [activeComponent, setActiveComponent] = useState("Home"); // Set default active component to "Home"
+  const [activeComponent, setActiveComponent] = useState("Home"); 
 
   const handleItemClick = (componentName) => {
     setActiveComponent(componentName);
