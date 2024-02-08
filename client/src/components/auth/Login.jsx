@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
-import withAuth from "../hoc/withAuth";
 import axios from "axios";
 import toast from "react-hot-toast";
 
@@ -121,4 +120,4 @@ function Login() {
   );
 }
 
-export default withAuth(Login);
+export default Login;

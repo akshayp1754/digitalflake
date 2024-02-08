@@ -5,7 +5,7 @@ import CategoryTable from "./CategoryTable";
 function Category() {
   return (
     <>
-      <nav className="bg-white border-gray-200 dark:bg-gray-900 mx-auto">
+      <nav className="bg-white border-gray-200 dark:bg-gray-900 ">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a
             href="https://flowbite.com/"
