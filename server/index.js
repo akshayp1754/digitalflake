@@ -4,11 +4,11 @@ const dotenv = require("dotenv");
 dotenv.config();
 const cors = require("cors");
 const PORT = process.env.PORT || 8081;
-app.use(cors());
-app.use(express.json());
 
 const { connectDB } = require("./utils/db");
 connectDB();
+app.use(cors());
+app.use(express.json());
 const authRoutes = require("./routes/auth");
 const categoryRoutes = require("./routes/category");
 const productsRoutes = require("./routes/product");

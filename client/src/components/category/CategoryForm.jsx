@@ -66,7 +66,7 @@ function CategoryForm() {
               id="first_name"
               value={categoryName}
               onChange={(e) => setCategoryName(e.target.value)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full mt-4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Category Name"
               required=""
             />
@@ -77,14 +77,14 @@ function CategoryForm() {
               id="last_name"
               value={Description}
               onChange={(e) => setDescription(e.target.value)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full mt-4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Description"
               required=""
             />
           </div>
 
-          <div>
-            <select value={value} onChange={(e) => setValue(e.target.value)}>
+          <div className="mt-4 border border-gray-300 rounded-lg">
+            <select value={value} className="border border-gray-300 rounded-lg" onChange={(e) => setValue(e.target.value)}>
               <option value="" disabled hidden>
                 Select an option
               </option>
