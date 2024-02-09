@@ -15,7 +15,7 @@ function Login() {
       e.preventDefault();
       setLoading(true);
       const login = await axios.post(
-        "https://super-cyan-culottes.cyclic.app/auth/login",
+        "https://digitalflake.onrender.com/auth/login",
         {
           email,
           password,
