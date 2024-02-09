@@ -86,12 +86,12 @@ module.exports.getProducts = async (req, res) => {
 
 module.exports.updateProduct = async (req, res) => {
   try {
-    const { productname, packsize, MRP, status, category } = req.body;
+    const { productname, packsize, MRP, status, selectedCategory } = req.body;
     const { productId } = req.params;
 
     const product = await Product.findOneAndUpdate(
       { _id: productId },
-      { productname, packsize, MRP, status, category },
+      { productname, packsize, MRP, status, selectedCategory },
       { new: true }
     );
     return res.status(200).json({

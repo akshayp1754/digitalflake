@@ -7,7 +7,6 @@ import { getCategory, updateCategory } from "../../redux/action/category";
 function ProductForm() {
   const productss = useSelector((state) => state.product)
   const categoryData = useSelector((state) => state.category);
-  console.log(categoryData);
   const [category, setCategory] = useState("");
   const [selectedCategory, setselectedCategory] = useState("");
   const [productname, setProductname] = useState("");
@@ -70,14 +69,13 @@ function ProductForm() {
         
       } else if (mode === "edit"){
         const numericMRP = parseInt(MRP, 10);
-        dispatch(updateProduct(id ,{ productname, packsize, MRP:numericMRP, status, category}))
+        dispatch(updateProduct(id ,{ productname, packsize, MRP:numericMRP, status, selectedCategory}))
         navigate("/home")
       }
     } catch (error) {
       console.log(error.message);
     }
   };
-  console.log(selectedCategory);
   return (
     <div>
       <form onSubmit={handleAddOrUpdate}>

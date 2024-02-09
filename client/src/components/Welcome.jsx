@@ -1,14 +1,18 @@
-import React from 'react'
+import React from "react";
 
 function Welcome() {
   return (
     <div>
-       <div className="flex flex-col items-center justify-center mt-40 mr-16">
-      <h1 className="text-4xl font-bold text-center mb-4">Digitalflake</h1>
-      <p className="text-lg text-gray-600">Welcome to Digitalflake Admin</p>
-    </div> 
+      <div className="flex flex-col items-center justify-center mt-40 mr-16">
+        <img
+          className="w-32 h-24 mr-2"
+          src="https://digitalflake.com/wp-content/uploads/2023/04/DF_logo-transparent2.png"
+          alt="logo"
+        />{" "}
+        <p className="text-lg text-gray-800">Welcome to Digitalflake Admin</p>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Welcome
+export default Welcome;

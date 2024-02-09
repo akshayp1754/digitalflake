@@ -8,10 +8,10 @@ export const signupUser = (authData) => async (dispatch) => {
     const response = await api.signup(authData);
     console.log(response);
     localStorage.setItem("token", response.data.token);
-    toast.success(response.data.message);
+    toast.success(response.message);
   } catch (error) {
     console.log(error);
-    toast.error(error.response.data.message);
+    toast.error(error.response.message);
   }
 };
 

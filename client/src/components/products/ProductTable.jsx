@@ -48,7 +48,7 @@ function ProductTable() {
                 Category
               </th>
               <th scope="col" className="px-6 py-3">
-                MRP
+                MRP(RS)
               </th>
               <th scope="col" className="px-6 py-3">
                 Image
